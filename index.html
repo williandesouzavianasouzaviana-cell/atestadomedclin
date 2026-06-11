@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitar Atestado Médico | Clínica Medclin</title>
-    <!-- Font Awesome para ícones -->
+    <title>Solicitar Atestado Médico Online | Clínica Medclin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -65,7 +64,9 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -73,7 +74,7 @@
             color: #2c3e50;
             font-weight: 500;
             transition: color 0.3s;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         nav a:hover {
@@ -94,7 +95,6 @@
 
         .btn-whatsapp-header:hover {
             background: #1da851;
-            color: white !important;
         }
 
         /* Hero Section */
@@ -103,6 +103,19 @@
             color: white;
             padding: 80px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
         }
 
         .hero h1 {
@@ -143,6 +156,24 @@
 
         .btn-main i {
             font-size: 1.5rem;
+        }
+
+        /* Image banner */
+        .image-banner {
+            padding: 60px 0;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .image-banner img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .image-banner img:hover {
+            transform: scale(1.02);
         }
 
         /* Steps Section */
@@ -204,10 +235,46 @@
             color: #1a5f7a;
         }
 
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background: #f5f9fc;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .gallery-card .caption {
+            padding: 15px 20px;
+            font-weight: 600;
+            color: #1a5f7a;
+        }
+
         /* Testimonials */
         .testimonials {
             padding: 80px 0;
-            background: #f5f9fc;
+            background: #ffffff;
         }
 
         .testimonials-grid {
@@ -217,7 +284,7 @@
         }
 
         .testimonial-card {
-            background: white;
+            background: #f5f9fc;
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
@@ -272,7 +339,7 @@
         /* Location & Contact */
         .location-contact {
             padding: 80px 0;
-            background: white;
+            background: #f5f9fc;
         }
 
         .two-columns {
@@ -283,7 +350,7 @@
         }
 
         .info-box {
-            background: #f5f9fc;
+            background: white;
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
@@ -312,7 +379,7 @@
         }
 
         .map-placeholder {
-            background: #e0f2f1;
+            background: white;
             border-radius: 20px;
             height: 100%;
             min-height: 300px;
@@ -325,10 +392,12 @@
             text-align: center;
             padding: 20px;
             border: 2px dashed #22a6b3;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
-        .map-placeholder i {
-            font-size: 3rem;
+        .map-placeholder img {
+            max-width: 100%;
+            border-radius: 15px;
             margin-bottom: 15px;
         }
 
@@ -353,14 +422,41 @@
         footer {
             background: #1a5f7a;
             color: white;
-            text-align: center;
-            padding: 25px;
+            padding: 40px 20px 25px;
             font-size: 0.9rem;
         }
 
-        footer a {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
             color: #b2e0e6;
+        }
+
+        .footer-col a {
+            color: #ddd;
             text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #bbb;
         }
 
         @media (max-width: 768px) {
@@ -371,7 +467,7 @@
                 font-size: 2rem;
             }
             nav ul {
-                gap: 15px;
+                gap: 12px;
             }
             .header-content {
                 flex-direction: column;
@@ -389,133 +485,205 @@
             <nav>
                 <ul>
                     <li><a href="#">Início</a></li>
-                    <li><a href="#">Atestado</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="privacidade.html">Privacidade</a></li>
+                    <li><a href="termos.html">Termos de Uso</a></li>
                     <li><a href="https://wa.me/message/UC2YLSMVOIYPI1" class="btn-whatsapp-header" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Solicite seu Atestado Médico Online</h1>
-            <p>Rápido, seguro e sem burocracia. Atendimento 100% digital com a qualidade da Clínica Medclin.</p>
-            <a href="https://wa.me/message/UC2YLSMVOIYPI1" target="_blank" class="btn-main">
-                <i class="fab fa-whatsapp"></i> Solicitar Atestado Agora
-            </a>
-        </div>
-    </section>
-
-    <section class="steps">
-        <div class="container">
-            <h2 class="section-title">Como funciona?</h2>
-            <p class="section-subtitle">Três passos simples para obter seu atestado médico sem sair de casa.</p>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>1. Fale Conosco</h3>
-                    <p>Clique no botão de WhatsApp e envie sua solicitação. Nossa equipe está pronta para atender.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon"><i class="fas fa-user-md"></i></div>
-                    <h3>2. Avaliação Médica</h3>
-                    <p>Um médico avaliará seu caso de forma online, com total segurança e sigilo.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon"><i class="fas fa-file-medical-alt"></i></div>
-                    <h3>3. Receba seu Atestado</h3>
-                    <p>Após a avaliação, o atestado é emitido e enviado diretamente para você.</p>
-                </div>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1>Solicite seu Atestado Médico Online</h1>
+                <p>Rápido, seguro e sem burocracia. Atendimento 100% digital com a qualidade da Clínica Medclin.</p>
+                <a href="https://wa.me/message/UC2YLSMVOIYPI1" target="_blank" class="btn-main">
+                    <i class="fab fa-whatsapp"></i> Solicitar Atestado Agora
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Avaliações de clientes</h2>
-            <p class="section-subtitle">Veja o que dizem as pessoas que já solicitaram atestado com a Medclin.</p>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <!-- Imagem de destaque (fornecida) -->
+        <section class="image-banner">
+            <div class="container">
+                <h2 class="section-title">Atestado Médico Digital</h2>
+                <p class="section-subtitle">Reconhecido e aceito em todo o Brasil. O mesmo documento que você recebe na clínica, agora online.</p>
+                <img src="https://admin-blog.grupogen.com.br/app/uploads/sites/2/2021/04/auxilio-incapacidade-temporaria-atestado-1-635x395.jpg" 
+                     alt="Modelo de atestado médico digital da Medclin" 
+                     style="max-width: 700px; width: 100%;">
+            </div>
+        </section>
+
+        <!-- Como funciona -->
+        <section class="steps">
+            <div class="container">
+                <h2 class="section-title">Como funciona?</h2>
+                <p class="section-subtitle">Três passos simples para obter seu atestado médico sem sair de casa.</p>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>1. Fale Conosco</h3>
+                        <p>Clique no botão de WhatsApp e envie sua solicitação. Nossa equipe está pronta para atender.</p>
                     </div>
-                    <p class="testimonial-text">"Precisei de um atestado para o trabalho e fui atendida em menos de 30 minutos. Muito prático e eficiente. Super recomendo!"</p>
-                    <div class="client-info">
-                        <div class="client-avatar">M</div>
-                        <div>
-                            <div class="client-name">Mariana Costa</div>
-                            <div class="client-role">Paciente verificada</div>
-                        </div>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fas fa-user-md"></i></div>
+                        <h3>2. Avaliação Médica</h3>
+                        <p>Um médico avaliará seu caso de forma online, com total segurança e sigilo.</p>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Atendimento rápido e humanizado. Solicitei pelo WhatsApp e deu tudo certo. O médico foi muito atencioso."</p>
-                    <div class="client-info">
-                        <div class="client-avatar">C</div>
-                        <div>
-                            <div class="client-name">Carlos Eduardo</div>
-                            <div class="client-role">Paciente verificado</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Estava com suspeita de virose e não podia sair de casa. Consegui o atestado online de forma simples. Excelente serviço!"</p>
-                    <div class="client-info">
-                        <div class="client-avatar">A</div>
-                        <div>
-                            <div class="client-name">Ana Lúcia</div>
-                            <div class="client-role">Paciente verificada</div>
-                        </div>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fas fa-file-medical-alt"></i></div>
+                        <h3>3. Receba seu Atestado</h3>
+                        <p>Após a avaliação, o atestado é emitido e enviado diretamente para você.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="location-contact">
-        <div class="container">
-            <h2 class="section-title">Nossa Localização</h2>
-            <p class="section-subtitle">Estamos em Brasília, mas atendemos online para todo o Brasil.</p>
-            <div class="two-columns">
-                <div class="info-box">
-                    <h3><i class="fas fa-map-marker-alt"></i> Endereço</h3>
-                    <div class="info-item">
-                        <i class="fas fa-building"></i>
-                        <div>Setor Scn Quadra 4 Bloco B, 00<br>Sala 702 Parte 3931<br>Asa Norte, Brasília - DF<br>CEP: 70714-020</div>
+        <!-- Galeria de imagens adicionais -->
+        <section class="gallery">
+            <div class="container">
+                <h2 class="section-title">Atendimento com excelência</h2>
+                <p class="section-subtitle">Confira imagens do nosso dia a dia e da nossa estrutura preparada para cuidar de você.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Médico realizando teleconsulta">
+                        <div class="caption">Teleconsulta com profissionais experientes</div>
                     </div>
-                    <h3 style="margin-top: 25px;"><i class="fas fa-address-book"></i> Contatos</h3>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:contatomedclin@medclin.com" style="color:#2c3e50; text-decoration:none;">contatomedclin@medclin.com</a>
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Documento médico sendo preenchido">
+                        <div class="caption">Documentação médica segura e ágil</div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <a href="tel:+5599981178581" style="color:#2c3e50; text-decoration:none;">(99) 9 98117-8581</a>
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Pessoa feliz após atendimento">
+                        <div class="caption">Satisfação garantida dos nossos pacientes</div>
                     </div>
-                    <a href="https://wa.me/message/UC2YLSMVOIYPI1" target="_blank" class="btn-whatsapp-bottom">
-                        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
-                    </a>
-                </div>
-                <div class="map-placeholder">
-                    <i class="fas fa-map-pin"></i>
-                    <p>Asa Norte, Brasília - DF</p>
-                    <p style="font-weight:normal; font-size:0.9rem;">Atendimento presencial com hora marcada.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Avaliações -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Avaliações de clientes</h2>
+                <p class="section-subtitle">Veja o que dizem as pessoas que já solicitaram atestado com a Medclin.</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Precisei de um atestado para o trabalho e fui atendida em menos de 30 minutos. Muito prático e eficiente. Super recomendo!"</p>
+                        <div class="client-info">
+                            <div class="client-avatar">M</div>
+                            <div>
+                                <div class="client-name">Mariana Costa</div>
+                                <div class="client-role">Paciente verificada</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Atendimento rápido e humanizado. Solicitei pelo WhatsApp e deu tudo certo. O médico foi muito atencioso."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">C</div>
+                            <div>
+                                <div class="client-name">Carlos Eduardo</div>
+                                <div class="client-role">Paciente verificado</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Estava com suspeita de virose e não podia sair de casa. Consegui o atestado online de forma simples. Excelente serviço!"</p>
+                        <div class="client-info">
+                            <div class="client-avatar">A</div>
+                            <div>
+                                <div class="client-name">Ana Lúcia</div>
+                                <div class="client-role">Paciente verificada</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Localização e Contato -->
+        <section class="location-contact">
+            <div class="container">
+                <h2 class="section-title">Nossa Localização</h2>
+                <p class="section-subtitle">Estamos em Brasília, mas atendemos online para todo o Brasil.</p>
+                <div class="two-columns">
+                    <div class="info-box">
+                        <h3><i class="fas fa-map-marker-alt"></i> Endereço</h3>
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <div>Setor Scn Quadra 4 Bloco B, 00<br>Sala 702 Parte 3931<br>Asa Norte, Brasília - DF<br>CEP: 70714-020</div>
+                        </div>
+                        <h3 style="margin-top: 25px;"><i class="fas fa-address-book"></i> Contatos</h3>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contatomedclin@medclin.com" style="color:#2c3e50; text-decoration:none;">contatomedclin@medclin.com</a>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+5599981178581" style="color:#2c3e50; text-decoration:none;">(99) 9 98117-8581</a>
+                        </div>
+                        <a href="https://wa.me/message/UC2YLSMVOIYPI1" target="_blank" class="btn-whatsapp-bottom">
+                            <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                        </a>
+                    </div>
+                    <div class="map-placeholder">
+                        <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                             alt="Fachada da Clínica Medclin em Brasília" 
+                             style="width:100%; max-height:250px; object-fit:cover;">
+                        <p style="margin-top:10px;"><i class="fas fa-map-pin"></i> Asa Norte, Brasília - DF</p>
+                        <p style="font-weight:normal; font-size:0.9rem;">Atendimento presencial com hora marcada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>© 2025 Clínica Medclin - Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
-            <p style="margin-top:5px;">Atendimento online seguro. Solicite seu atestado médico com comodidade.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Medclin</h4>
+                    <p><strong>Razão Social:</strong> Clinica Medica Medclin LTDA<br>
+                    <strong>CNPJ:</strong> 39.775.035/0001-38<br>
+                    <strong>Fundação:</strong> 13/11/2020<br>
+                    <strong>Situação:</strong> Ativa</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Endereço</h4>
+                    <p>Setor Scn Quadra 4 Bloco B, 00<br>Sala 702 Parte 3931<br>Asa Norte, Brasília - DF<br>CEP: 70714-020</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <a href="#">Início</a>
+                    <a href="privacidade.html">Política de Privacidade</a>
+                    <a href="termos.html">Termos de Uso</a>
+                    <a href="mailto:contatomedclin@medclin.com">E-mail</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Atividade Principal</h4>
+                    <p>86.30-5-99 - Atividades de atenção ambulatorial não especificadas anteriormente.</p>
+                    <a href="https://wa.me/message/UC2YLSMVOIYPI1" target="_blank" style="margin-top:15px; display:inline-flex; align-items:center; gap:8px; background:#25D366; color:white; padding:8px 18px; border-radius:20px; text-decoration:none;">
+                        <i class="fab fa-whatsapp"></i> Solicitar Atestado
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Clinica Medica Medclin LTDA - Grupo Medclin. Todos os direitos reservados. | Atendimento online seguro.</p>
+            </div>
         </div>
     </footer>
 </body>
