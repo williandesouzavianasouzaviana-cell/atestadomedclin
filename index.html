@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitar Atestado Médico Online | Clínica Medclin</title>
+    <title>Solicitar Atestado Médico Online em 20 Minutos | Clínica Medclin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -101,7 +101,7 @@
         .hero {
             background: linear-gradient(135deg, #1a5f7a 0%, #22a6b3 100%);
             color: white;
-            padding: 80px 0;
+            padding: 70px 0 60px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -118,10 +118,41 @@
             border-radius: 50%;
         }
 
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 25px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+            animation: pulse-badge 2s infinite;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .hero-badge i {
+            color: #25D366;
+            font-size: 1.3rem;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
         .hero h1 {
             font-size: 2.8rem;
             margin-bottom: 20px;
             font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: #25D366;
+            text-decoration: underline;
+            text-underline-offset: 8px;
         }
 
         .hero p {
@@ -156,6 +187,22 @@
 
         .btn-main i {
             font-size: 1.5rem;
+        }
+
+        /* Urgency Banner */
+        .urgency-banner {
+            background: #fff3cd;
+            border-bottom: 3px solid #ffc107;
+            text-align: center;
+            padding: 15px 20px;
+            font-weight: 600;
+            color: #856404;
+            font-size: 1.05rem;
+        }
+
+        .urgency-banner i {
+            margin-right: 8px;
+            color: #ff6b00;
         }
 
         /* Image banner */
@@ -233,6 +280,17 @@
         .step-card h3 {
             margin-bottom: 12px;
             color: #1a5f7a;
+        }
+
+        .step-card .time-badge {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
         }
 
         /* Gallery Section */
@@ -473,6 +531,10 @@
                 flex-direction: column;
                 gap: 15px;
             }
+            .hero-badge {
+                font-size: 1rem;
+                padding: 10px 18px;
+            }
         }
     </style>
 </head>
@@ -493,12 +555,21 @@
         </div>
     </header>
 
+    <!-- Banner de urgência -->
+    <div class="urgency-banner">
+        <i class="fas fa-bolt"></i> Atestado pronto em apenas <strong>20 a 30 minutos</strong> após a consulta online! 
+        <i class="fas fa-clock" style="margin-left: 8px;"></i>
+    </div>
+
     <main>
         <!-- Hero -->
         <section class="hero">
             <div class="container">
-                <h1>Solicite seu Atestado Médico Online</h1>
-                <p>Rápido, seguro e sem burocracia. Atendimento 100% digital com a qualidade da Clínica Medclin.</p>
+                <div class="hero-badge">
+                    <i class="fas fa-clock"></i> Atestado em 20 a 30 minutos!
+                </div>
+                <h1>Atestado Médico Online <span>em 20 Minutos</span></h1>
+                <p>Rápido, seguro e sem burocracia. Consulta online, atestado emitido na hora. Atendimento 100% digital com a qualidade da Clínica Medclin.</p>
                 <a href="https://wa.me/message/UC2YLSMVOIYPI1" target="_blank" class="btn-main">
                     <i class="fab fa-whatsapp"></i> Solicitar Atestado Agora
                 </a>
@@ -509,7 +580,7 @@
         <section class="image-banner">
             <div class="container">
                 <h2 class="section-title">Atestado Médico Digital</h2>
-                <p class="section-subtitle">Reconhecido e aceito em todo o Brasil. O mesmo documento que você recebe na clínica, agora online.</p>
+                <p class="section-subtitle">Reconhecido e aceito em todo o Brasil. O mesmo documento que você recebe na clínica, agora online e em até <strong>30 minutos</strong>.</p>
                 <img src="https://admin-blog.grupogen.com.br/app/uploads/sites/2/2021/04/auxilio-incapacidade-temporaria-atestado-1-635x395.jpg" 
                      alt="Modelo de atestado médico digital da Medclin" 
                      style="max-width: 700px; width: 100%;">
@@ -520,22 +591,25 @@
         <section class="steps">
             <div class="container">
                 <h2 class="section-title">Como funciona?</h2>
-                <p class="section-subtitle">Três passos simples para obter seu atestado médico sem sair de casa.</p>
+                <p class="section-subtitle">Três passos simples para obter seu atestado médico em <strong>até 30 minutos</strong> sem sair de casa.</p>
                 <div class="steps-grid">
                     <div class="step-card">
                         <div class="step-icon"><i class="fas fa-mobile-alt"></i></div>
                         <h3>1. Fale Conosco</h3>
-                        <p>Clique no botão de WhatsApp e envie sua solicitação. Nossa equipe está pronta para atender.</p>
+                        <p>Clique no botão de WhatsApp e envie sua solicitação. Nossa equipe está pronta para atender imediatamente.</p>
+                        <span class="time-badge"><i class="far fa-clock"></i> Imediato</span>
                     </div>
                     <div class="step-card">
                         <div class="step-icon"><i class="fas fa-user-md"></i></div>
                         <h3>2. Avaliação Médica</h3>
-                        <p>Um médico avaliará seu caso de forma online, com total segurança e sigilo.</p>
+                        <p>Um médico avaliará seu caso por videochamada ou chat, com total segurança e sigilo profissional.</p>
+                        <span class="time-badge"><i class="far fa-clock"></i> 10 a 15 min</span>
                     </div>
                     <div class="step-card">
                         <div class="step-icon"><i class="fas fa-file-medical-alt"></i></div>
                         <h3>3. Receba seu Atestado</h3>
-                        <p>Após a avaliação, o atestado é emitido e enviado diretamente para você.</p>
+                        <p>Após a avaliação, o atestado é emitido e enviado diretamente para o seu WhatsApp ou e-mail.</p>
+                        <span class="time-badge"><i class="far fa-clock"></i> 5 a 10 min</span>
                     </div>
                 </div>
             </div>
@@ -545,22 +619,22 @@
         <section class="gallery">
             <div class="container">
                 <h2 class="section-title">Atendimento com excelência</h2>
-                <p class="section-subtitle">Confira imagens do nosso dia a dia e da nossa estrutura preparada para cuidar de você.</p>
+                <p class="section-subtitle">Confira imagens do nosso dia a dia e da nossa estrutura preparada para cuidar de você com agilidade.</p>
                 <div class="gallery-grid">
                     <div class="gallery-card">
                         <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                              alt="Médico realizando teleconsulta">
-                        <div class="caption">Teleconsulta com profissionais experientes</div>
+                        <div class="caption">Teleconsulta rápida e eficiente</div>
                     </div>
                     <div class="gallery-card">
                         <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                              alt="Documento médico sendo preenchido">
-                        <div class="caption">Documentação médica segura e ágil</div>
+                        <div class="caption">Documentação pronta em minutos</div>
                     </div>
                     <div class="gallery-card">
                         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Pessoa feliz após atendimento">
-                        <div class="caption">Satisfação garantida dos nossos pacientes</div>
+                             alt="Pessoa feliz após atendimento rápido">
+                        <div class="caption">Pacientes satisfeitos com a agilidade</div>
                     </div>
                 </div>
             </div>
@@ -589,7 +663,7 @@
                         <div class="stars">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"Atendimento rápido e humanizado. Solicitei pelo WhatsApp e deu tudo certo. O médico foi muito atencioso."</p>
+                        <p class="testimonial-text">"Atendimento extremamente rápido. Em 20 minutos meu atestado já estava no WhatsApp. Médico muito atencioso!"</p>
                         <div class="client-info">
                             <div class="client-avatar">C</div>
                             <div>
@@ -602,7 +676,7 @@
                         <div class="stars">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"Estava com suspeita de virose e não podia sair de casa. Consegui o atestado online de forma simples. Excelente serviço!"</p>
+                        <p class="testimonial-text">"Estava com suspeita de virose e em 25 minutos resolvi tudo pelo celular. Excelente serviço e super ágil!"</p>
                         <div class="client-info">
                             <div class="client-avatar">A</div>
                             <div>
@@ -682,7 +756,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Clinica Medica Medclin LTDA - Grupo Medclin. Todos os direitos reservados. | Atendimento online seguro.</p>
+                <p>© 2026 Clinica Medica Medclin LTDA - Grupo Medclin. Todos os direitos reservados. | Atestado em 20-30 min | Atendimento online seguro.</p>
             </div>
         </div>
     </footer>
